@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-image: linear-gradient(to bottom, #f7f7f7, #e7e7e7);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        input[type="email"]:focus, input[type="password"]:focus {
+            border: 1px solid #337ab7;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button[type="submit"] {
+            width: 100%;
+            height: 40px;
+            background-color: #337ab7;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #23527c;
+        }
+        .error {
+            color: #ff0000;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .link {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .link a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+        .link a:hover {
+            color: #23527c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <% if (error) { %>
+        <p class="error"><%= error %></p>
+    <% } %>
+    <form action="/signup" method="post">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    <div class="link">
+        <a href="/signin">Already have an account? Sign In</a>
+    </div>
+</body>
+</html>

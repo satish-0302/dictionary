@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+    <style>
+        /* Add some extraordinary styling */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-image: linear-gradient(to bottom, #f7f7f7, #e7e7e7);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"] {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        input[type="text"]:focus {
+            border: 1px solid #337ab7;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button[type="submit"] {
+            width: 100%;
+            height: 40px;
+            background-color: #337ab7;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #23527c;
+        }
+        .definition {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dictionary</h1>
+    <form action="/dictionary" method="get">
+        <input type="text" name="word" placeholder="Enter a word" required>
+        <button type="submit">Search</button>
+    </form>
+    <% if (definition) { %>
+        <p class="definition"><%= definition %></p>
+    <% } %>
+</body>
+</html>
